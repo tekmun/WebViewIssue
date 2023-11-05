@@ -24,7 +24,7 @@ public static class MauiProgram
 		builder.Logging.AddDebug();
 #endif
 #if IOS || MACCATALYST
-        Microsoft.Maui.Handlers.WebViewHandler.Mapper.Add("PermissionRequest", (handler, view) =>
+        Microsoft.Maui.Handlers.WebViewHandler.Mapper.Add(nameof(WKUIDelegate), (handler, view) =>
             {
                 if (UIDevice.CurrentDevice.CheckSystemVersion(15, 0))
                 {
